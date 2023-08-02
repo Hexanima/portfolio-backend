@@ -30,7 +30,7 @@ app.use("/list", controller.list);
 app.use((req, res) => {
     return res.json({
         msg: "Hello world!",
-        today: new Date().getDate(),
+        today: new Date().toLocaleDateString(),
         envMessage,
         test: test
     })
