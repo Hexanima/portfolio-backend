@@ -13,6 +13,7 @@ const app = express();
 // Config
 const PORT = process.env.PORT || 3000;
 const envMessage = process.env.MESSAGE;
+const test = process.env.TESTING;
 
 // Middlewares
 app.use(express.json());
@@ -25,7 +26,8 @@ app.use((req, res) => {
     return res.json({
         msg: "Hello world!",
         today: new Date().getDate(),
-        envMessage
+        envMessage,
+        test
     })
 })
 
