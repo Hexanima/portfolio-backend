@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Message = sequelize.define(alias, cols, config);
     Message.associate = (models) => {
-        Message.hasMany(models.User, {
+        Message.belongsTo(models.User, {
             as: "author",
             foreignKey: "author_id",
         });
