@@ -21,7 +21,12 @@ app.use(express.urlencoded({extended: false}))
 app.use(methodOverride("_method"));
 app.use(cors())
 
+const controller = require("./controllers/user.controller")
+
 // Routes
+
+app.use("/list", controller.list);
+
 app.use((req, res) => {
     return res.json({
         msg: "Hello world!",
