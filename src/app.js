@@ -27,7 +27,7 @@ app.use((req, res) => {
         msg: "Hello world!",
         today: new Date().getDate(),
         envMessage,
-        test
+        test: test
     })
 })
 
