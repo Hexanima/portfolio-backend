@@ -21,11 +21,10 @@ app.use(express.urlencoded({extended: false}))
 app.use(methodOverride("_method"));
 app.use(cors())
 
-const controller = require("./controllers/user.controller")
-
 // Routes
+const userRouter = require("./routes/user.routes.js")
 
-app.use("/list", controller.list);
+app.use("/list", userRouter);
 
 app.use((req, res) => {
     return res.json({
